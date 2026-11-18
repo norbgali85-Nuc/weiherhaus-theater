@@ -15,7 +15,6 @@
       --wood-plank: #31241b;
       --lamp-glow: #e39d4c;
       --accent-green: #81a677;
-      --accent-green-hover: #96bc8c;
       --mask-red: #8d2a24;
       --cream-paper: #f2eadc;
       --cream-muted: #c7bba9;
@@ -41,16 +40,16 @@
       font-variation-settings: "SOFT" 80, "WONK" 1;
     }
 
-    /* Einheitliche globale Link-Farbe für alle klickbaren Verweise */
-    a:not(.no-accent-link):not(.btn-action):not(.logo-link) {
-      color: var(--accent-green);
+    /* Standard-Links: Im Normalzustand normale Textfarbe, bei Hover nur Farbwechsel ohne Unterstreichung */
+    a:not(.btn-action):not(.logo-link) {
+      color: inherit;
       text-decoration: none;
       transition: color 0.2s ease;
     }
 
-    a:not(.no-accent-link):not(.btn-action):not(.logo-link):hover {
-      color: var(--accent-green-hover);
-      text-decoration: underline;
+    a:not(.btn-action):not(.logo-link):hover {
+      color: var(--accent-green);
+      text-decoration: none;
     }
 
     .hero-wood-fade {
@@ -102,9 +101,9 @@
       </a>
 
       <nav class="flex items-center gap-6 sm:gap-8 text-sm font-semibold text-[#e6dccb]">
-        <a href="#spielplan" class="no-accent-link hover:text-[#81a677] transition-colors">Spielplan</a>
-        <a href="#haus" class="no-accent-link hover:text-[#81a677] transition-colors">Das Haus</a>
-        <a href="#kontakt" class="no-accent-link hover:text-[#81a677] transition-colors">Kontakt</a>
+        <a href="#spielplan" class="hover:text-[#81a677] transition-colors">Spielplan</a>
+        <a href="#haus" class="hover:text-[#81a677] transition-colors">Das Haus</a>
+        <a href="#kontakt" class="hover:text-[#81a677] transition-colors">Kontakt</a>
       </nav>
     </div>
   </header>
@@ -127,10 +126,10 @@
         Eine Bühne wie ein großes Wohnzimmer mitten im Grünen.
       </p>
       <div class="mt-7 flex flex-wrap gap-3">
-        <a href="#spielplan" class="no-accent-link btn-action px-5 py-2.5 bg-[#8d2a24] hover:bg-[#a1322b] text-[#f2eadc] text-sm font-semibold rounded-md transition-colors shadow-lg">
+        <a href="#spielplan" class="btn-action px-5 py-2.5 bg-[#8d2a24] hover:bg-[#a1322b] text-[#f2eadc] text-sm font-semibold rounded-md transition-colors shadow-lg">
           Zum Spielplan
         </a>
-        <a href="#kontakt" class="no-accent-link btn-action px-5 py-2.5 bg-[#1b140f]/85 hover:bg-[#31241b] border border-[#e39d4c]/35 text-[#f2eadc] text-sm font-semibold rounded-md transition-colors backdrop-blur-sm shadow-lg">
+        <a href="#kontakt" class="btn-action px-5 py-2.5 bg-[#1b140f]/85 hover:bg-[#31241b] border border-[#e39d4c]/35 text-[#f2eadc] text-sm font-semibold rounded-md transition-colors backdrop-blur-sm shadow-lg">
           Anfahrt & Kontakt
         </a>
       </div>
@@ -142,20 +141,20 @@
     <div class="border-b border-[#e39d4c]/20 pb-5 mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
       <div>
         <h2 class="text-3xl sm:text-4xl font-semibold text-[#f2eadc]">Aktueller Spielplan</h2>
-        <p class="text-sm text-[#81a677] font-semibold mt-1">
+        <p class="text-sm text-[#c7bba9] font-medium mt-1">
           Einlass stets 1 Stunde vor der Veranstaltung
         </p>
       </div>
 
       <div class="flex flex-wrap items-center gap-3 text-sm text-[#c7bba9]">
         <span>
-          Kartenreservierung unter <a href="tel:+491777810626" class="font-semibold">0177 7810626</a>
+          Kartenreservierung unter <a href="tel:+491777810626" class="font-semibold text-[#f2eadc] hover:text-[#81a677]">0177 7810626</a>
         </span>
         <a
           href="https://wa.me/491777810626?text=Hallo%2C%20ich%20m%C3%B6chte%20gerne%20Karten%20f%C3%BCr%20eine%20Veranstaltung%20im%20Weiherhaus%20Theater%20reservieren%3A"
           target="_blank"
           rel="noopener"
-          class="no-accent-link btn-action inline-flex items-center gap-2 px-3.5 py-2 rounded-md bg-[#3c5938] hover:bg-[#496b44] border border-[#81a677]/40 text-[#f2eadc] text-xs font-bold tracking-wide transition-colors shadow-md"
+          class="btn-action inline-flex items-center gap-2 px-3.5 py-2 rounded-md bg-[#3c5938] hover:bg-[#496b44] border border-[#81a677]/40 text-[#f2eadc] text-xs font-bold tracking-wide transition-colors shadow-md"
         >
           <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-3.825 3.113-6.937 6.937-6.937 1.856.001 3.598.723 4.907 2.034 1.31 1.311 2.031 3.054 2.03 4.908-.001 3.825-3.113 6.938-6.937 6.938z"/>
@@ -178,7 +177,7 @@
             Weiherhaus Theater · Ortenburg
           </p>
         </div>
-        <a href="mailto:info@kahlert.net?subject=Kartenreservierung%2013.%20M%C3%A4rz%202027%20%E2%80%93%20Trio%20Mi.S.S." class="no-accent-link btn-action shrink-0 inline-block px-4 py-2.5 bg-[#8d2a24] hover:bg-[#a1322b] text-[#f2eadc] text-sm font-semibold rounded-md transition-colors text-center">
+        <a href="mailto:info@kahlert.net?subject=Kartenreservierung%2013.%20M%C3%A4rz%202027%20%E2%80%93%20Trio%20Mi.S.S." class="btn-action shrink-0 inline-block px-4 py-2.5 bg-[#8d2a24] hover:bg-[#a1322b] text-[#f2eadc] text-sm font-semibold rounded-md transition-colors text-center">
           Per E-Mail anfragen
         </a>
       </article>
@@ -195,7 +194,7 @@
             Weiherhaus Theater · Ortenburg
           </p>
         </div>
-        <a href="mailto:info@kahlert.net?subject=Kartenreservierung%2010.%20April%202027%20%E2%80%93%20Maxi%20Muschaweck" class="no-accent-link btn-action shrink-0 inline-block px-4 py-2.5 bg-[#8d2a24] hover:bg-[#a1322b] text-[#f2eadc] text-sm font-semibold rounded-md transition-colors text-center">
+        <a href="mailto:info@kahlert.net?subject=Kartenreservierung%2010.%20April%202027%20%E2%80%93%20Maxi%20Muschaweck" class="btn-action shrink-0 inline-block px-4 py-2.5 bg-[#8d2a24] hover:bg-[#a1322b] text-[#f2eadc] text-sm font-semibold rounded-md transition-colors text-center">
           Per E-Mail anfragen
         </a>
       </article>
@@ -251,13 +250,13 @@
         />
       </div>
 
-      <!-- THEATER MASKARA LOGO (OHNE HINTERGRUND-KASTEN) -->
+      <!-- THEATER MASKARA LOGO -->
       <div class="my-8 flex justify-center">
         <a
           href="https://www.theater-maskara.de"
           target="_blank"
           rel="noopener"
-          class="no-accent-link inline-block opacity-90 hover:opacity-100 hover:scale-105 transition-all"
+          class="inline-block opacity-90 hover:opacity-100 hover:scale-105 transition-all"
           title="Zur Hauptseite von Theater Maskara"
         >
           <img
