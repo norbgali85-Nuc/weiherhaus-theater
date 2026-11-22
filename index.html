@@ -15,6 +15,7 @@
       --wood-plank: #31241b;
       --lamp-glow: #e39d4c;
       --moss-green: #4e6346;
+      --moss-light: #a6bd9d;
       --mask-red: #8d2a24;
       --cream-paper: #f2eadc;
       --cream-muted: #c7bba9;
@@ -107,10 +108,10 @@
         <img src="Logo rot WH.png" alt="Theater Maskara – Weiherhaus Theater" class="h-14 sm:h-16 w-auto object-contain" />
       </a>
 
-      <nav class="flex items-center gap-6 sm:gap-8 text-sm font-semibold text-[#e6dccb]">
-        <a href="#spielplan" class="hover:text-[#96b888] transition-colors">Spielplan</a>
-        <a href="#haus" class="hover:text-[#96b888] transition-colors">Das Haus</a>
-        <a href="#kontakt" class="hover:text-[#96b888] transition-colors">Kontakt</a>
+      <nav class="flex items-center gap-6 sm:gap-8 text-sm font-semibold text-[#f2eadc]">
+        <a href="#spielplan" class="text-[#f2eadc] hover:text-[#a6bd9d] no-underline transition-colors">Spielplan</a>
+        <a href="#haus" class="text-[#f2eadc] hover:text-[#a6bd9d] no-underline transition-colors">Das Haus</a>
+        <a href="#kontakt" class="text-[#f2eadc] hover:text-[#a6bd9d] no-underline transition-colors">Kontakt</a>
       </nav>
     </div>
   </header>
@@ -133,10 +134,10 @@
         Eine Bühne wie ein großes Wohnzimmer mitten im Grünen.
       </p>
       <div class="mt-7 flex flex-wrap gap-3">
-        <a href="#spielplan" class="px-5 py-2.5 bg-[#8d2a24] hover:bg-[#a1322b] text-[#f2eadc] text-sm font-semibold rounded-md transition-colors shadow-lg">
+        <a href="#spielplan" class="px-5 py-2.5 bg-[#8d2a24] hover:bg-[#a1322b] text-[#f2eadc] text-sm font-semibold rounded-md no-underline transition-colors shadow-lg">
           Zum Spielplan
         </a>
-        <a href="#kontakt" class="px-5 py-2.5 bg-[#1b140f]/85 hover:bg-[#4e6346]/40 border border-[#e39d4c]/35 hover:border-[#96b888] text-[#f2eadc] text-sm font-semibold rounded-md transition-colors backdrop-blur-sm shadow-lg">
+        <a href="#kontakt" class="px-5 py-2.5 bg-[#1b140f]/85 hover:bg-[#4e6346]/40 border border-[#e39d4c]/35 hover:border-[#a6bd9d] text-[#f2eadc] hover:text-[#a6bd9d] text-sm font-semibold rounded-md no-underline transition-colors backdrop-blur-sm shadow-lg">
           Anfahrt & Kontakt
         </a>
       </div>
@@ -145,11 +146,28 @@
 
   <!-- SPIELPLAN -->
   <section id="spielplan" class="scroll-mt-24 max-w-5xl mx-auto px-5 py-14">
-    <div class="border-b border-[#e39d4c]/20 pb-4 mb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
-      <h2 class="text-3xl sm:text-4xl font-semibold text-[#f2eadc]">Aktueller Spielplan</h2>
-      <p class="text-sm text-[#c7bba9]">
-        Kartenreservierung unter <a href="mailto:info@kahlert.net" class="text-[#e39d4c] font-semibold hover:underline">info@kahlert.net</a>
-      </p>
+    <div class="border-b border-[#e39d4c]/20 pb-4 mb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-3">
+      <div>
+        <h2 class="text-3xl sm:text-4xl font-semibold text-[#f2eadc]">Aktueller Spielplan</h2>
+        <p class="text-sm font-semibold text-[#a6bd9d] mt-1.5">
+          Einlass stets 1 Stunde vor Beginn.
+        </p>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-3 text-sm text-[#c7bba9]">
+        <span>
+          Kartenreservierung unter
+          <a href="tel:+491777810626" class="text-[#f2eadc] font-semibold hover:text-[#a6bd9d] no-underline transition-colors">0177 7810626</a>
+        </span>
+        <a
+          href="https://wa.me/491777810626?text=Hallo%2C%20ich%20m%C3%B6chte%20gerne%20Karten%20f%C3%BCr%20eine%20Veranstaltung%20im%20Weiherhaus%20Theater%20reservieren."
+          target="_blank"
+          rel="noopener"
+          class="inline-block px-3.5 py-1.5 bg-[#4e6346] hover:bg-[#5c7553] text-[#f2eadc] text-xs sm:text-sm font-semibold rounded-md no-underline transition-colors"
+        >
+          WhatsApp
+        </a>
+      </div>
     </div>
 
     <div class="space-y-4">
@@ -169,20 +187,11 @@
             </p>
           </div>
 
-          <div class="flex flex-wrap items-center gap-2.5 self-start sm:self-center">
-            <a
-              href="https://wa.me/491777810626?text=Hallo%2C%20ich%20m%C3%B6chte%20gerne%20Karten%20f%C3%BCr%20Trio%20Mi.S.S.%20am%2013.%20M%C3%A4rz%202027%20im%20Weiherhaus%20Theater%20reservieren."
-              target="_blank"
-              rel="noopener"
-              onclick="event.stopPropagation();"
-              class="shrink-0 inline-block px-3.5 py-2.5 bg-[#4e6346] hover:bg-[#5c7553] text-[#f2eadc] text-sm font-semibold rounded-md transition-colors text-center"
-            >
-              WhatsApp
-            </a>
+          <div class="flex items-center gap-3 self-start sm:self-center">
             <a
               href="mailto:info@kahlert.net?subject=Kartenreservierung%20Trio%20Mi.S.S.%2013.%20M%C3%A4rz%202027"
               onclick="event.stopPropagation();"
-              class="shrink-0 inline-block px-4 py-2.5 bg-[#8d2a24] hover:bg-[#a1322b] text-[#f2eadc] text-sm font-semibold rounded-md transition-colors text-center"
+              class="shrink-0 inline-block px-4 py-2.5 bg-[#8d2a24] hover:bg-[#a1322b] text-[#f2eadc] text-sm font-semibold rounded-md no-underline transition-colors text-center"
             >
               Per E-Mail anfragen
             </a>
@@ -210,7 +219,7 @@
                 Es spielen <strong>Michaela Bauer</strong> (Akkordeon), <strong>Dr. Stephan von Clarmann</strong> (Vibraphon) und <strong>Stephan Glaubitz</strong> (Kontrabass).
               </p>
               <p class="text-xs text-[#c7bba9] pt-1">
-                Mehr zur Band: <a href="https://www.triomiss.de" target="_blank" rel="noopener" class="text-[#a6bd9d] font-semibold hover:underline">www.triomiss.de</a>
+                Mehr zur Band: <a href="https://www.triomiss.de" target="_blank" rel="noopener" class="text-[#f2eadc] font-semibold hover:text-[#a6bd9d] no-underline transition-colors">www.triomiss.de</a>
               </p>
             </div>
 
@@ -272,7 +281,7 @@
                 <p><strong class="text-[#f2eadc]">Vorankündigung:</strong> Der Termin und der Start des Kartenvorverkaufs befinden sich derzeit noch in Abstimmung. Sobald alles fix ist, starten hier Reservierung und Ticketverkauf.</p>
               </div>
               <p class="text-xs text-[#c7bba9]">
-                Weitere Infos auf der Künstlerseite: <a href="https://www.maxi-muschaweck.de" target="_blank" rel="noopener" class="text-[#a6bd9d] font-semibold hover:underline">www.maxi-muschaweck.de</a>
+                Weitere Infos auf der Künstlerseite: <a href="https://www.maxi-muschaweck.de" target="_blank" rel="noopener" class="text-[#f2eadc] font-semibold hover:text-[#a6bd9d] no-underline transition-colors">www.maxi-muschaweck.de</a>
               </p>
             </div>
 
@@ -297,9 +306,14 @@
     <div id="kontakt" class="scroll-mt-24 grid md:grid-cols-2 gap-10 items-start">
       <div>
         <h2 class="text-3xl font-semibold mb-3 text-[#f2eadc]">Das Weiherhaus Theater</h2>
-        <p class="text-sm sm:text-base text-[#dfd5c5] leading-relaxed">
-          Umgeben von Bäumen direkt am Weiher am Fuße des Luisenthals. Hier liegt die Heimat des Theater Maskara. Drinnen empfangen handgefertigte Ledermasken, warmes Holz und eine familiäre Wohnzimmer-Atmosphäre die Gäste – ein besonderer Ort für Theater, Musik und Kleinkunst in Ortenburg.
-        </p>
+        <div class="text-sm sm:text-base text-[#dfd5c5] leading-relaxed space-y-3">
+          <p>
+            Umgeben von Bäumen direkt am Weiher am Fuße des Luisenthals liegt die Heimat des Theater Maskara.
+          </p>
+          <p>
+            Drinnen empfangen handgefertigte Ledermasken, warmes Holz und eine familiäre Wohnzimmer-Atmosphäre die Gäste – ein besonderer Ort für Theater, Musik und Kleinkunst in Ortenburg.
+          </p>
+        </div>
         <p class="text-sm text-[#a6bd9d] font-semibold mt-4">
           Barrierefreier Zugang.
         </p>
@@ -317,12 +331,11 @@
 
         <div>
           <div class="text-xs uppercase tracking-wider text-[#e39d4c] font-bold">Kontakt & Reservierung</div>
-          <p class="mt-0.5 text-[#dfd5c5] leading-relaxed">
-            <a href="tel:+491777810626" class="hover:text-[#a6bd9d]">0177 7810626</a> ·
-            <a href="https://wa.me/491777810626" target="_blank" rel="noopener" class="text-[#a6bd9d] font-semibold hover:underline">WhatsApp</a><br />
-            <a href="tel:+4985422415" class="hover:text-[#a6bd9d]">08542 2415</a><br />
-            <a href="mailto:info@kahlert.net" class="text-[#e39d4c] font-semibold hover:underline">info@kahlert.net</a><br />
-            <a href="mailto:info@theater-maskara.de" class="text-[#e39d4c] font-semibold hover:underline">info@theater-maskara.de</a>
+          <p class="mt-0.5 leading-relaxed">
+            <a href="tel:+491777810626" class="text-[#f2eadc] font-semibold hover:text-[#a6bd9d] no-underline transition-colors">0177 7810626</a><br />
+            <a href="tel:+4985422415" class="text-[#f2eadc] font-semibold hover:text-[#a6bd9d] no-underline transition-colors">08542 2415</a><br />
+            <a href="mailto:info@kahlert.net" class="text-[#f2eadc] font-semibold hover:text-[#a6bd9d] no-underline transition-colors">info@kahlert.net</a><br />
+            <a href="mailto:info@theater-maskara.de" class="text-[#f2eadc] font-semibold hover:text-[#a6bd9d] no-underline transition-colors">info@theater-maskara.de</a>
           </p>
         </div>
       </div>
@@ -357,17 +370,17 @@
         </a>
       </div>
 
-      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#dfd5c5] pt-4 border-t border-[#e39d4c]/10">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs pt-4 border-t border-[#e39d4c]/10">
         <div>
-          <a href="https://www.theater-maskara.de" target="_blank" rel="noopener" class="hover:text-[#a6bd9d] transition-colors">
+          <a href="https://www.theater-maskara.de" target="_blank" rel="noopener" class="text-[#f2eadc] hover:text-[#a6bd9d] no-underline transition-colors">
             © 2026 Weiherhaus Theater · Theater Maskara
           </a>
         </div>
         <div class="flex items-center gap-6">
-          <a href="https://www.theater-maskara.de/kontakt/impressum.html" target="_blank" rel="noopener" class="hover:text-[#a6bd9d] transition-colors">
+          <a href="https://www.theater-maskara.de/kontakt/impressum.html" target="_blank" rel="noopener" class="text-[#f2eadc] hover:text-[#a6bd9d] no-underline transition-colors">
             Impressum
           </a>
-          <a href="https://www.theater-maskara.de/kontakt/impressum.html" target="_blank" rel="noopener" class="hover:text-[#a6bd9d] transition-colors">
+          <a href="https://www.theater-maskara.de/kontakt/impressum.html" target="_blank" rel="noopener" class="text-[#f2eadc] hover:text-[#a6bd9d] no-underline transition-colors">
             Datenschutz
           </a>
         </div>
