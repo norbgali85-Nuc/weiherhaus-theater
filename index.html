@@ -61,10 +61,12 @@
       background: linear-gradient(145deg, rgba(49, 36, 27, 0.85) 0%, rgba(38, 28, 21, 0.95) 100%);
       border: 1px solid rgba(227, 157, 76, 0.16);
       box-shadow: 0 10px 30px -10px rgba(10, 6, 4, 0.7);
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
     }
 
     .wood-card:hover {
-      border-color: rgba(227, 157, 76, 0.35);
+      border-color: rgba(116, 151, 103, 0.65);
+      box-shadow: 0 12px 32px -10px rgba(78, 99, 70, 0.35);
     }
 
     details.event-accordion summary {
@@ -106,9 +108,9 @@
       </a>
 
       <nav class="flex items-center gap-6 sm:gap-8 text-sm font-semibold text-[#e6dccb]">
-        <a href="#spielplan" class="hover:text-[#e39d4c] transition-colors">Spielplan</a>
-        <a href="#haus" class="hover:text-[#e39d4c] transition-colors">Das Haus</a>
-        <a href="#kontakt" class="hover:text-[#e39d4c] transition-colors">Kontakt</a>
+        <a href="#spielplan" class="hover:text-[#96b888] transition-colors">Spielplan</a>
+        <a href="#haus" class="hover:text-[#96b888] transition-colors">Das Haus</a>
+        <a href="#kontakt" class="hover:text-[#96b888] transition-colors">Kontakt</a>
       </nav>
     </div>
   </header>
@@ -134,7 +136,7 @@
         <a href="#spielplan" class="px-5 py-2.5 bg-[#8d2a24] hover:bg-[#a1322b] text-[#f2eadc] text-sm font-semibold rounded-md transition-colors shadow-lg">
           Zum Spielplan
         </a>
-        <a href="#kontakt" class="px-5 py-2.5 bg-[#1b140f]/85 hover:bg-[#31241b] border border-[#e39d4c]/35 text-[#f2eadc] text-sm font-semibold rounded-md transition-colors backdrop-blur-sm shadow-lg">
+        <a href="#kontakt" class="px-5 py-2.5 bg-[#1b140f]/85 hover:bg-[#4e6346]/40 border border-[#e39d4c]/35 hover:border-[#96b888] text-[#f2eadc] text-sm font-semibold rounded-md transition-colors backdrop-blur-sm shadow-lg">
           Anfahrt & Kontakt
         </a>
       </div>
@@ -144,10 +146,7 @@
   <!-- SPIELPLAN -->
   <section id="spielplan" class="scroll-mt-24 max-w-5xl mx-auto px-5 py-14">
     <div class="border-b border-[#e39d4c]/20 pb-4 mb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
-      <div>
-        <h2 class="text-3xl sm:text-4xl font-semibold text-[#f2eadc]">Aktueller Spielplan</h2>
-        <p class="text-xs text-[#c7bba9] mt-1">Für weitere Infos einfach auf die jeweilige Veranstaltung klicken.</p>
-      </div>
+      <h2 class="text-3xl sm:text-4xl font-semibold text-[#f2eadc]">Aktueller Spielplan</h2>
       <p class="text-sm text-[#c7bba9]">
         Kartenreservierung unter <a href="mailto:info@kahlert.net" class="text-[#e39d4c] font-semibold hover:underline">info@kahlert.net</a>
       </p>
@@ -156,13 +155,13 @@
     <div class="space-y-4">
 
       <!-- EVENT START: TRIO MI.S.S. -->
-      <details class="event-accordion wood-card rounded-xl transition-colors group">
+      <details class="event-accordion wood-card rounded-xl group">
         <summary class="p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 select-none">
           <div class="flex-1">
             <div class="text-xs uppercase tracking-wider text-[#e39d4c] font-bold">
               Samstag · 13. März 2027 · 19:00 Uhr
             </div>
-            <h3 class="text-2xl font-semibold mt-1 text-[#f2eadc] group-hover:text-[#e39d4c] transition-colors">
+            <h3 class="text-2xl font-semibold mt-1 text-[#f2eadc] group-hover:text-[#a6bd9d] transition-colors">
               Trio Mi.S.S. – Carmina Burana von Carl Orff
             </h3>
             <p class="text-sm text-[#c7bba9] mt-1">
@@ -170,17 +169,26 @@
             </p>
           </div>
 
-          <div class="flex items-center gap-3 self-start sm:self-center">
+          <div class="flex flex-wrap items-center gap-2.5 self-start sm:self-center">
+            <a
+              href="https://wa.me/491777810626?text=Hallo%2C%20ich%20m%C3%B6chte%20gerne%20Karten%20f%C3%BCr%20Trio%20Mi.S.S.%20am%2013.%20M%C3%A4rz%202027%20im%20Weiherhaus%20Theater%20reservieren."
+              target="_blank"
+              rel="noopener"
+              onclick="event.stopPropagation();"
+              class="shrink-0 inline-block px-3.5 py-2.5 bg-[#4e6346] hover:bg-[#5c7553] text-[#f2eadc] text-sm font-semibold rounded-md transition-colors text-center"
+            >
+              WhatsApp
+            </a>
             <a
               href="mailto:info@kahlert.net?subject=Kartenreservierung%20Trio%20Mi.S.S.%2013.%20M%C3%A4rz%202027"
               onclick="event.stopPropagation();"
               class="shrink-0 inline-block px-4 py-2.5 bg-[#8d2a24] hover:bg-[#a1322b] text-[#f2eadc] text-sm font-semibold rounded-md transition-colors text-center"
             >
-              Karten anfragen
+              Per E-Mail anfragen
             </a>
             <span
               aria-hidden="true"
-              class="event-chevron inline-flex items-center justify-center w-9 h-9 rounded-full bg-[#1b140f]/75 border border-[#e39d4c]/25 text-[#e39d4c]"
+              class="event-chevron inline-flex items-center justify-center w-9 h-9 rounded-full bg-[#1b140f]/75 border border-[#e39d4c]/25 group-hover:border-[#a6bd9d]/50 text-[#e39d4c] group-hover:text-[#a6bd9d]"
             >
               <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
@@ -190,8 +198,8 @@
         </summary>
 
         <div class="px-5 sm:px-6 pb-6 pt-3 border-t border-[#e39d4c]/15 text-sm text-[#dfd5c5]">
-          <div class="grid md:grid-cols-3 gap-6 items-center">
-            <div class="md:col-span-2 space-y-3 leading-relaxed">
+          <div class="flex flex-col md:flex-row gap-6 items-center">
+            <div class="flex-1 space-y-3 leading-relaxed">
               <p class="text-base font-semibold text-[#f2eadc]">
                 Carl Orffs <em>Carmina Burana</em> – neu arrangiert für Vibraphon, Akkordeon und Kontrabass
               </p>
@@ -202,14 +210,15 @@
                 Es spielen <strong>Michaela Bauer</strong> (Akkordeon), <strong>Dr. Stephan von Clarmann</strong> (Vibraphon) und <strong>Stephan Glaubitz</strong> (Kontrabass).
               </p>
               <p class="text-xs text-[#c7bba9] pt-1">
-                Mehr zur Band: <a href="https://www.triomiss.de" target="_blank" rel="noopener" class="text-[#e39d4c] font-semibold hover:underline">www.triomiss.de</a>
+                Mehr zur Band: <a href="https://www.triomiss.de" target="_blank" rel="noopener" class="text-[#a6bd9d] font-semibold hover:underline">www.triomiss.de</a>
               </p>
             </div>
 
-            <div>
+            <div class="w-full md:w-64 shrink-0">
               <img
-                src="IMG_9355[1].jpg"
+                src="trio-miss.jpg"
                 alt="Trio Mi.S.S. mit Akkordeon, Vibraphon und Kontrabass"
+                onerror="this.parentElement.style.display='none'"
                 class="w-full h-48 object-cover rounded-lg border border-[#e39d4c]/20 shadow-md"
               />
             </div>
@@ -219,7 +228,7 @@
       <!-- EVENT ENDE -->
 
       <!-- EVENT START: MAXI MUSCHAWECK (VORANKÜNDIGUNG) -->
-      <details class="event-accordion wood-card rounded-xl transition-colors group">
+      <details class="event-accordion wood-card rounded-xl group">
         <summary class="p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 select-none">
           <div class="flex-1">
             <div class="flex flex-wrap items-center gap-2">
@@ -230,7 +239,7 @@
                 Voraussichtlich Samstag · 10. April 2027 · 20:00 Uhr
               </span>
             </div>
-            <h3 class="text-2xl font-semibold mt-1.5 text-[#f2eadc] group-hover:text-[#e39d4c] transition-colors">
+            <h3 class="text-2xl font-semibold mt-1.5 text-[#f2eadc] group-hover:text-[#a6bd9d] transition-colors">
               Maxi Muschaweck – Spotlight on Magic
             </h3>
             <p class="text-sm text-[#c7bba9] mt-1">
@@ -239,12 +248,12 @@
           </div>
 
           <div class="flex items-center gap-3 self-start sm:self-center">
-            <span class="text-xs font-semibold text-[#c7bba9] hidden sm:inline">
-              Infos & Vorschau
+            <span class="text-xs font-semibold text-[#a6bd9d]">
+              Vorankündigung
             </span>
             <span
               aria-hidden="true"
-              class="event-chevron inline-flex items-center justify-center w-9 h-9 rounded-full bg-[#1b140f]/75 border border-[#e39d4c]/25 text-[#e39d4c]"
+              class="event-chevron inline-flex items-center justify-center w-9 h-9 rounded-full bg-[#1b140f]/75 border border-[#e39d4c]/25 group-hover:border-[#a6bd9d]/50 text-[#e39d4c] group-hover:text-[#a6bd9d]"
             >
               <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
@@ -254,23 +263,24 @@
         </summary>
 
         <div class="px-5 sm:px-6 pb-6 pt-3 border-t border-[#e39d4c]/15 text-sm text-[#dfd5c5]">
-          <div class="grid md:grid-cols-3 gap-6 items-center">
-            <div class="md:col-span-2 space-y-3 leading-relaxed">
+          <div class="flex flex-col md:flex-row gap-6 items-center">
+            <div class="flex-1 space-y-3 leading-relaxed">
               <p>
                 <strong>Maxi Muschaweck</strong> bringt mit <em>Spotlight on Magic</em> magische Momente ins Weiherhaus Theater in Ortenburg.
               </p>
-              <div class="bg-[#1b140f]/55 border border-[#e39d4c]/15 rounded-lg p-3.5 text-xs sm:text-sm text-[#c7bba9] space-y-1">
+              <div class="bg-[#1b140f]/55 border border-[#a6bd9d]/25 rounded-lg p-3.5 text-xs sm:text-sm text-[#c7bba9] space-y-1">
                 <p><strong class="text-[#f2eadc]">Vorankündigung:</strong> Der Termin und der Start des Kartenvorverkaufs befinden sich derzeit noch in Abstimmung. Sobald alles fix ist, starten hier Reservierung und Ticketverkauf.</p>
               </div>
               <p class="text-xs text-[#c7bba9]">
-                Weitere Infos auf der Künstlerseite: <a href="https://www.maxi-muschaweck.de" target="_blank" rel="noopener" class="text-[#e39d4c] font-semibold hover:underline">www.maxi-muschaweck.de</a>
+                Weitere Infos auf der Künstlerseite: <a href="https://www.maxi-muschaweck.de" target="_blank" rel="noopener" class="text-[#a6bd9d] font-semibold hover:underline">www.maxi-muschaweck.de</a>
               </p>
             </div>
 
-            <div>
+            <div class="w-full md:w-64 shrink-0">
               <img
-                src="02 Kartensprudel.jpg"
+                src="maxi-muschaweck.jpg"
                 alt="Maxi Muschaweck – Spotlight on Magic"
+                onerror="this.parentElement.style.display='none'"
                 class="w-full h-48 object-cover rounded-lg border border-[#e39d4c]/20 shadow-md"
               />
             </div>
@@ -308,8 +318,9 @@
         <div>
           <div class="text-xs uppercase tracking-wider text-[#e39d4c] font-bold">Kontakt & Reservierung</div>
           <p class="mt-0.5 text-[#dfd5c5] leading-relaxed">
-            <a href="tel:+491777810626" class="hover:text-[#e39d4c]">0177 7810626</a><br />
-            <a href="tel:+4985422415" class="hover:text-[#e39d4c]">08542 2415</a><br />
+            <a href="tel:+491777810626" class="hover:text-[#a6bd9d]">0177 7810626</a> ·
+            <a href="https://wa.me/491777810626" target="_blank" rel="noopener" class="text-[#a6bd9d] font-semibold hover:underline">WhatsApp</a><br />
+            <a href="tel:+4985422415" class="hover:text-[#a6bd9d]">08542 2415</a><br />
             <a href="mailto:info@kahlert.net" class="text-[#e39d4c] font-semibold hover:underline">info@kahlert.net</a><br />
             <a href="mailto:info@theater-maskara.de" class="text-[#e39d4c] font-semibold hover:underline">info@theater-maskara.de</a>
           </p>
@@ -348,15 +359,15 @@
 
       <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#dfd5c5] pt-4 border-t border-[#e39d4c]/10">
         <div>
-          <a href="https://www.theater-maskara.de" target="_blank" rel="noopener" class="hover:text-[#e39d4c] transition-colors">
+          <a href="https://www.theater-maskara.de" target="_blank" rel="noopener" class="hover:text-[#a6bd9d] transition-colors">
             © 2026 Weiherhaus Theater · Theater Maskara
           </a>
         </div>
         <div class="flex items-center gap-6">
-          <a href="https://www.theater-maskara.de/kontakt/impressum.html" target="_blank" rel="noopener" class="hover:text-[#e39d4c] transition-colors">
+          <a href="https://www.theater-maskara.de/kontakt/impressum.html" target="_blank" rel="noopener" class="hover:text-[#a6bd9d] transition-colors">
             Impressum
           </a>
-          <a href="https://www.theater-maskara.de/kontakt/impressum.html" target="_blank" rel="noopener" class="hover:text-[#e39d4c] transition-colors">
+          <a href="https://www.theater-maskara.de/kontakt/impressum.html" target="_blank" rel="noopener" class="hover:text-[#a6bd9d] transition-colors">
             Datenschutz
           </a>
         </div>
