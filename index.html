@@ -8,10 +8,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-  
-  <!-- Brevo CSS & JS -->
-  <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
-  <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
 
   <style>
     :root {
@@ -101,98 +97,6 @@
         linear-gradient(to bottom, transparent 0%, black 22%, black 78%, transparent 100%),
         linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
       -webkit-mask-composite: source-in;
-    }
-
-    /* Brevo Formular & Rückmeldungen an Weiherhaus Holz- & Moos-Optik anpassen */
-    #sib-container {
-      background-color: transparent !important;
-      border: none !important;
-      padding: 0 !important;
-      max-width: 100% !important;
-    }
-
-    #sib-container #sib-form input[type="email"] {
-      background-color: rgba(27, 20, 15, 0.9) !important;
-      color: #f2eadc !important;
-      border: 1px solid rgba(227, 157, 76, 0.3) !important;
-      border-radius: 0.375rem !important;
-      padding: 0.65rem 0.95rem !important;
-      font-family: 'Nunito Sans', sans-serif !important;
-      font-size: 0.875rem !important;
-      font-weight: 600 !important;
-      transition: border-color 0.2s ease !important;
-    }
-
-    #sib-container #sib-form input[type="email"]::placeholder {
-      color: #c7bba9 !important;
-      opacity: 0.65 !important;
-    }
-
-    #sib-container #sib-form input[type="email"]:focus {
-      border-color: #a6bd9d !important;
-      outline: none !important;
-    }
-
-    #sib-container #sib-form button.sib-form-block__button {
-      background-color: #8d2a24 !important;
-      color: #f2eadc !important;
-      font-family: 'Nunito Sans', sans-serif !important;
-      font-size: 0.875rem !important;
-      font-weight: 600 !important;
-      letter-spacing: 0.01em !important;
-      border: none !important;
-      border-radius: 0.375rem !important;
-      padding: 0.65rem 1.25rem !important;
-      text-transform: none !important;
-      cursor: pointer !important;
-      transition: background-color 0.2s ease !important;
-    }
-
-    #sib-container #sib-form button.sib-form-block__button:hover {
-      background-color: #a1322b !important;
-    }
-
-    #success-message {
-      background-color: rgba(78, 99, 70, 0.28) !important;
-      border: 1px solid rgba(166, 189, 157, 0.45) !important;
-      color: #f2eadc !important;
-      border-radius: 0.5rem !important;
-      padding: 0.75rem 1rem !important;
-      font-size: 0.85rem !important;
-      margin-bottom: 0.75rem !important;
-    }
-
-    #error-message {
-      background-color: rgba(141, 42, 36, 0.28) !important;
-      border: 1px solid rgba(227, 157, 76, 0.45) !important;
-      color: #f2eadc !important;
-      border-radius: 0.5rem !important;
-      padding: 0.75rem 1rem !important;
-      font-size: 0.85rem !important;
-      margin-bottom: 0.75rem !important;
-    }
-
-    .sib-form-message-panel {
-      max-width: 100% !important;
-      margin: 0 0 0.75rem 0 !important;
-    }
-
-    .sib-form-message-panel__text {
-      color: #f2eadc !important;
-      font-family: 'Nunito Sans', sans-serif !important;
-      font-size: 0.85rem !important;
-      padding: 0 !important;
-    }
-
-    .sib-form-message-panel__text svg {
-      display: none !important;
-    }
-
-    .entry__error {
-      color: #e39d4c !important;
-      font-size: 0.75rem !important;
-      margin-top: 0.35rem !important;
-      display: block !important;
     }
   </style>
 </head>
@@ -412,47 +316,30 @@
           </p>
         </div>
 
-        <div id="sib-container" class="w-full md:w-auto md:min-w-[350px] sib-form">
-          <div id="sib-form-container" class="sib-form-container">
-            
-            <!-- Fehlermeldung -->
-            <div id="error-message" class="sib-form-message-panel">
-              <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
-                <span class="sib-form-message-panel__inner-text">
-                  Deine Anmeldung konnte nicht gespeichert werden. Bitte versuche es erneut.
-                </span>
-              </div>
-            </div>
-
-            <!-- Erfolgsmeldung -->
-            <div id="success-message" class="sib-form-message-panel">
-              <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
-                <span class="sib-form-message-panel__inner-text">
-                  Fast geschafft! Bitte klicke noch auf den Bestätigungslink in deinem Postfach.
-                </span>
-              </div>
-            </div>
-
-            <div id="sib-container-inner" class="sib-container--large sib-container--vertical">
-              <form id="sib-form" method="POST" action="https://6c05a257.sibforms.com/serve/MUIFANRIpFfqJ_bvCntpecsT2SaAWsXMz_j-Sfp64l5k15z-i4B3qzceeB5vPVRZV6iv4Zi8VI1KgvU8SgShnE8mb1tlLcyZFz7PmTHutYJ5HpRPf2g_-S4lqq8yMql6XvT6OOqWHh3M4K9hLsXFcav9shbggE8D6oD0RxMvehAVZbIDhy4vLQEAQyM1uVNRjaARYCz3kUuWrXDUfQ==" data-type="subscription">
-                <div class="sib-input sib-form-block">
-                  <div class="form__entry entry_block">
-                    <div class="flex flex-col sm:flex-row gap-2.5">
-                      <input class="input flex-1" type="email" id="EMAIL" name="EMAIL" autocomplete="off" placeholder="deine@mail.de" data-required="true" required />
-                      <button class="sib-form-block__button sib-form-block__button-with-loader shrink-0" form="sib-form" type="submit">
-                        Eintragen
-                      </button>
-                    </div>
-                    <label class="entry__error entry__error--primary"></label>
-                  </div>
-                </div>
-                <input type="text" name="email_address_check" value="" class="hidden">
-                <input type="hidden" name="locale" value="de">
-              </form>
-            </div>
-
+        <form
+          method="POST"
+          action="https://6c05a257.sibforms.com/serve/MUIFANRIpFfqJ_bvCntpecsT2SaAWsXMz_j-Sfp64l5k15z-i4B3qzceeB5vPVRZV6iv4Zi8VI1KgvU8SgShnE8mb1tlLcyZFz7PmTHutYJ5HpRPf2g_-S4lqq8yMql6XvT6OOqWHh3M4K9hLsXFcav9shbggE8D6oD0RxMvehAVZbIDhy4vLQEAQyM1uVNRjaARYCz3kUuWrXDUfQ=="
+          class="w-full md:w-auto md:min-w-[350px]"
+        >
+          <div class="flex flex-col sm:flex-row gap-2.5">
+            <input
+              type="email"
+              name="EMAIL"
+              required
+              placeholder="deine@mail.de"
+              aria-label="E-Mail-Adresse für den Newsletter"
+              class="flex-1 bg-[#1b140f]/90 text-[#f2eadc] placeholder-[#c7bba9]/65 border border-[#e39d4c]/30 focus:border-[#a6bd9d] focus:outline-none rounded-md px-3.5 py-2.5 text-sm font-semibold transition-colors"
+            />
+            <button
+              type="submit"
+              class="shrink-0 px-5 py-2.5 bg-[#8d2a24] hover:bg-[#a1322b] text-[#f2eadc] text-sm font-semibold rounded-md transition-colors cursor-pointer"
+            >
+              Eintragen
+            </button>
           </div>
-        </div>
+          <input type="text" name="email_address_check" value="" class="hidden" tabindex="-1" autocomplete="off">
+          <input type="hidden" name="locale" value="de">
+        </form>
       </div>
     </div>
   </section>
@@ -560,21 +447,6 @@
       </div>
     </div>
   </footer>
-
-  <script>
-    window.REQUIRED_CODE_ERROR_MESSAGE = 'Bitte wählen Sie eine Vorwahl aus.';
-    window.LOCALE = 'de';
-    window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "Bitte überprüfen Sie das E-Mail-Format.";
-    window.REQUIRED_ERROR_MESSAGE = "Dieses Feld darf nicht leer sein.";
-    window.GENERIC_INVALID_MESSAGE = "Ungültige Eingabe.";
-    window.translation = {
-      common: {
-        selectedList: '{quantity} Liste ausgewählt',
-        selectedLists: '{quantity} Listen ausgewählt'
-      }
-    };
-    var AUTOHIDE = Boolean(0);
-  </script>
 
 </body>
 </html>
