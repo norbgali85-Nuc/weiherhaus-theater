@@ -316,30 +316,41 @@
           </p>
         </div>
 
-        <form
-          method="POST"
-          action="https://6c05a257.sibforms.com/serve/MUIFANRIpFfqJ_bvCntpecsT2SaAWsXMz_j-Sfp64l5k15z-i4B3qzceeB5vPVRZV6iv4Zi8VI1KgvU8SgShnE8mb1tlLcyZFz7PmTHutYJ5HpRPf2g_-S4lqq8yMql6XvT6OOqWHh3M4K9hLsXFcav9shbggE8D6oD0RxMvehAVZbIDhy4vLQEAQyM1uVNRjaARYCz3kUuWrXDUfQ=="
-          class="w-full md:w-auto md:min-w-[350px]"
-        >
-          <div class="flex flex-col sm:flex-row gap-2.5">
-            <input
-              type="email"
-              name="EMAIL"
-              required
-              placeholder="deine@mail.de"
-              aria-label="E-Mail-Adresse für den Newsletter"
-              class="flex-1 bg-[#1b140f]/90 text-[#f2eadc] placeholder-[#c7bba9]/65 border border-[#e39d4c]/30 focus:border-[#a6bd9d] focus:outline-none rounded-md px-3.5 py-2.5 text-sm font-semibold transition-colors"
-            />
-            <button
-              type="submit"
-              class="shrink-0 px-5 py-2.5 bg-[#8d2a24] hover:bg-[#a1322b] text-[#f2eadc] text-sm font-semibold rounded-md transition-colors cursor-pointer"
-            >
-              Eintragen
-            </button>
-          </div>
-          <input type="text" name="email_address_check" value="" class="hidden" tabindex="-1" autocomplete="off">
-          <input type="hidden" name="locale" value="de">
-        </form>
+        <div class="w-full md:w-auto md:min-w-[350px]">
+          <form
+            id="weiherhaus-newsletter-form"
+            method="POST"
+            action="https://6c05a257.sibforms.com/serve/MUIFANRIpFfqJ_bvCntpecsT2SaAWsXMz_j-Sfp64l5k15z-i4B3qzceeB5vPVRZV6iv4Zi8VI1KgvU8SgShnE8mb1tlLcyZFz7PmTHutYJ5HpRPf2g_-S4lqq8yMql6XvT6OOqWHh3M4K9hLsXFcav9shbggE8D6oD0RxMvehAVZbIDhy4vLQEAQyM1uVNRjaARYCz3kUuWrXDUfQ=="
+          >
+            <div class="flex flex-col sm:flex-row gap-2.5">
+              <input
+                id="newsletter-email"
+                type="email"
+                name="EMAIL"
+                required
+                placeholder="deine@mail.de"
+                aria-label="E-Mail-Adresse für den Newsletter"
+                class="flex-1 bg-[#1b140f]/90 text-[#f2eadc] placeholder-[#c7bba9]/65 border border-[#e39d4c]/30 focus:border-[#a6bd9d] focus:outline-none rounded-md px-3.5 py-2.5 text-sm font-semibold transition-colors"
+              />
+              <button
+                id="newsletter-submit"
+                type="submit"
+                class="shrink-0 px-5 py-2.5 bg-[#8d2a24] hover:bg-[#a1322b] disabled:opacity-60 text-[#f2eadc] text-sm font-semibold rounded-md transition-colors cursor-pointer"
+              >
+                Eintragen
+              </button>
+            </div>
+            <input type="text" name="email_address_check" value="" class="hidden" tabindex="-1" autocomplete="off">
+            <input type="hidden" name="locale" value="de">
+          </form>
+
+          <div
+            id="newsletter-status"
+            role="status"
+            aria-live="polite"
+            class="hidden mt-3 rounded-md px-3.5 py-2.5 text-xs sm:text-sm leading-relaxed"
+          ></div>
+        </div>
       </div>
     </div>
   </section>
@@ -447,6 +458,92 @@
       </div>
     </div>
   </footer>
+
+  <!-- NEWSLETTER BACKGROUND SUBMIT (KEINE WEITERLEITUNG AUF SIBFORMS.COM) -->
+  <script>
+    (function () {
+      const form = document.getElementById("weiherhaus-newsletter-form");
+      const submitBtn = document.getElementById("newsletter-submit");
+      const statusBox = document.getElementById("newsletter-status");
+      const emailInput = document.getElementById("newsletter-email");
+
+      if (!form || !submitBtn || !statusBox || !emailInput) return;
+
+      function showStatus(message, isSuccess) {
+        statusBox.textContent = message;
+        statusBox.classList.remove(
+          "hidden",
+          "bg-[#4e6346]/35",
+          "border",
+          "border-[#a6bd9d]/40",
+          "text-[#d7e6d0]",
+          "bg-[#8d2a24]/35",
+          "border-[#e39d4c]/40",
+          "text-[#f2eadc]"
+        );
+
+        if (isSuccess) {
+          statusBox.classList.add(
+            "bg-[#4e6346]/35",
+            "border",
+            "border-[#a6bd9d]/40",
+            "text-[#d7e6d0]"
+          );
+        } else {
+          statusBox.classList.add(
+            "bg-[#8d2a24]/35",
+            "border",
+            "border-[#e39d4c]/40",
+            "text-[#f2eadc]"
+          );
+        }
+      }
+
+      form.addEventListener("submit", async function (event) {
+        event.preventDefault();
+
+        if (!emailInput.value.trim()) {
+          showStatus("Bitte gib eine gültige E-Mail-Adresse ein.", false);
+          return;
+        }
+
+        const originalText = submitBtn.textContent;
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Sendet …";
+
+        const formData = new FormData(form);
+        const params = new URLSearchParams();
+        for (const [key, value] of formData.entries()) {
+          params.append(key, value);
+        }
+
+        try {
+          await fetch(form.action, {
+            method: "POST",
+            mode: "no-cors",
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+            },
+            body: params.toString()
+          });
+
+          form.reset();
+          showStatus(
+            "Fast geschafft: Wir haben dir eine Bestätigungs-E-Mail geschickt. Bitte klicke darin kurz auf den Link, damit deine Anmeldung aktiv wird.",
+            true
+          );
+        } catch (error) {
+          showStatus(
+            "Das Eintragen hat gerade nicht geklappt. Bitte versuche es gleich noch einmal oder schreib uns an post@weiherhaus-theater.de.",
+            false
+          );
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalText;
+        }
+      });
+    })();
+  </script>
 
 </body>
 </html>
